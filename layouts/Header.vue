@@ -1,12 +1,11 @@
 <template>
-    <header class="mt-6">
+    <header class="container mx-auto mb-3">
         <nav class="p-4">
             <div
-                class="flex justify-between items-center px-5 py-1 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full">
+                class="flex justify-between items-center px-5 py-1 ltr:bg-gradient-to-r rtl:bg-gradient-to-l from-gray-900 to-gray-700 rtl: rounded-full">
                 <div class="flex items-center">
                     <div class="election-logo animate__animated animate__fadeIn">
-                        <a href="#"><img
-                                src="https://s3.amazonaws.com/rudawelections.com.storage/tmp-images/election-logo.svg"
+                        <a href="#"><img src="https://rudaw.s3.eu-west-2.amazonaws.com/election/election_justlogo.png"
                                 class="w-[60px] h-auto" alt="Rudaw" title="Rudaw"></a>
                     </div>
                     <div class="logo animate__animated animate__fadeIn ltr:ml-4 rtl:mr-4">
@@ -17,7 +16,7 @@
                 </div>
 
                 <div class="hidden md:block">
-                    <ul :class="['flex text-lg', isRTL ? 'flex-row-reverse' : 'flex-row']">
+                    <ul :class="['flex text-lg', isRTL ? 'flex-row' : 'flex-row']">
                         <li v-for="item in menuItems" :key="item.route"
                             class="ltr:ml-10 rtl:mr-10 first:ltr:ml-0 first:rtl:mr-0 animate__animated animate__fadeIn relative"
                             :class="{ 'active': isActive(item.route) }">
@@ -64,7 +63,6 @@ const isMobileMenuOpen = ref(false)
 
 const menuItems = [
     { route: '/', label: 'general.interactive_map', activeClass: 'interactive_map_active' },
-    { route: '/raprsy', label: 'general.raprsy', activeClass: 'survey_active' },
     { route: '/ancamakan', label: 'general.results', activeClass: 'ancam_active' }
 ]
 
@@ -73,9 +71,18 @@ function openMenu() {
 }
 
 function isActive(routePath) {
-    return route.path.includes(routePath)
+    // Handle root path separately
+    if (routePath === '/') {
+        return route.path === '/' || route.path === `/${locale.value}/` || route.path === `/${locale.value}`
+    }
+
+    // For other routes, check if the current path matches the route path
+    // with or without the language prefix
+    const pathWithoutLang = route.path.replace(new RegExp(`^/${locale.value}`), '')
+    return pathWithoutLang === routePath || pathWithoutLang.startsWith(`${routePath}/`)
 }
 </script>
+
 
 <style scoped>
 .active::after {
