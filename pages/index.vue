@@ -50,12 +50,12 @@ const { t, locale } = useI18n();
 const isRTL = computed(() => ['ar', 'ckb', 'ku'].includes(locale.value));
 
 const votingStats = computed(() => ({
-  totalVoters: 100000,
-  votedCount: 80000,
-  validVotes: 78000,
-  invalidVotes: 2000,
-  participation: 80,
-  totalSeats: 100
+  totalVoters: 0,
+  votedCount: 0,
+  validVotes: 0,
+  invalidVotes: 0,
+  participation: 0,
+  totalSeats: 0
 }));
 
 const parties = ref([
@@ -63,27 +63,26 @@ const parties = ref([
     id: 1,
     name: t('general.party_a'),
     logo: '',
-    seats: 30,
-    votes: 50000,
-    percentage: 40,
+    seats: 0,
+    votes: 0,
+    percentage: 0,
     candidates: [
-      { id: 1, name: t('general.candidate_1'), image: '', votes: 10000, seats: 2 },
-      { id: 2, name: t('general.candidate_2'), image: '', votes: 8000, seats: 1 },
+      { id: 1, name: t('general.candidate_1'), image: '', votes: 0, seats: 0 },
+      { id: 2, name: t('general.candidate_2'), image: '', votes: 0, seats: 0 },
     ]
   },
   {
     id: 2,
     name: t('general.party_b'),
     logo: '',
-    seats: 20,
-    votes: 40000,
-    percentage: 30,
+    seats: 0,
+    votes: 0,
+    percentage: 0,
     candidates: [
-      { id: 3, name: t('general.candidate_3'), image: '', votes: 7000, seats: 1 },
-      { id: 4, name: t('general.candidate_4'), image: '', votes: 6000, seats: 1 },
+      { id: 3, name: t('general.candidate_3'), image: '', votes: 0, seats: 0 },
+      { id: 4, name: t('general.candidate_4'), image: '', votes: 0, seats: 0 },
     ]
   },
-  // Add more parties...
 ]);
 
 const selectedParty = ref(null);
