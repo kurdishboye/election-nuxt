@@ -6,8 +6,9 @@
       <!-- Overall Results Summary -->
       <div class="mb-12">
         <h2 class="text-2xl font-bold text-amber-500 mb-4">{{ t('general.overall_results') }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <OverallResultsChart :parties="parties" />
+          <PartySeatsChart :parties="parties" />
           <ParliamentVisualization :parties="parties" />
         </div>
       </div>
@@ -34,7 +35,6 @@
 
       <!-- Regional Results -->
       <div class="mt-12">
-        <h2 class="text-2xl font-bold text-amber-500 mb-4">{{ t('general.regional_results') }}</h2>
         <RegionalResultsMap :regional-data="regionalData" :parties="parties" />
       </div>
     </div>
@@ -50,6 +50,7 @@ import OverallResultsChart from '~/components/OverallResultsChart.vue';
 import ParliamentVisualization from '~/components/ParliamentVisualization.vue';
 import PartyDetailedResults from '~/components/PartyDetailedResults.vue';
 import RegionalResultsMap from '~/components/RegionalResultsMap.vue';
+import PartySeatsChart from '~/components/PartySeatsChart.vue';
 
 const { t, locale } = useI18n();
 

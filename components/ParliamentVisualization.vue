@@ -38,7 +38,7 @@ const props = defineProps({
 
 const { t } = useI18n();
 
-const width = 500;
+const width = 400;
 const height = 400;
 const seatSize = 6;
 const rowCount = 5;
