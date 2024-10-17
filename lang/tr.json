@@ -17,7 +17,6 @@
         "total_seats": "Toplam Sandalye",
         "total_candidates": "Toplam Aday",
         "voting_centers": "Oy Verme Merkezleri",
-        "seat_distribution": "Sandalye Dağılımı",
         "voting_staff": "Oy Verme Personeli",
         "women": "Kadınlar",
         "men": "Erkekler",
@@ -32,7 +31,7 @@
         "candidate_4": "Aday 4",
         "election_results": "Seçim Sonuçları",
         "overall_results": "Genel Sonuçlar",
-        "party_details": "{party} Parti Detayları",
+        "party_details": "{party} için Parti Detayları",
         "select_party": "Detayları görmek için bir parti seçin",
         "regional_results": "Bölgesel Sonuçlar",
         "parliament_seats": "Parlamento Sandalyeleri",
@@ -53,6 +52,18 @@
         "total_participants": "Toplam Katılımcı",
         "valid_votes": "Geçerli Oylar",
         "invalid_votes": "Geçersiz Oylar",
-        "participation_rate": "Katılım Oranı"
+        "participation_rate": "Katılım Oranı",
+        "loading_data": "Veriler yükleniyor...",
+        "seat_distribution": "Sandalye Dağılımı",
+        "all": "Tümü",
+        "openbox": "Açık Sandık",
+        "search": "Ara",
+        "total": "Toplam",
+        "per_page": "sayfa başına",
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "page": "Sayfa",
+        "of": "/",
+        "name": "İsim"
     }
 }

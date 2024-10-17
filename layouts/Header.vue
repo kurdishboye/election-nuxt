@@ -18,7 +18,7 @@
                 <div class="hidden md:block">
                     <ul :class="['flex text-lg', isRTL ? 'flex-row' : 'flex-row']">
                         <li v-for="item in menuItems" :key="item.route"
-                            class="ltr:ml-10 rtl:mr-10 first:ltr:ml-0 first:rtl:mr-0 animate__animated animate__fadeIn relative"
+                            class="ltr:ml-10 rtl:mr-10 first:ltr:ml-0 first:rtl:mr-0   relative"
                             :class="{ 'active': isActive(item.route) }">
                             <NuxtLink :to="localePath(item.route)" class="text-gray-300 hover:text-white">
                                 {{ $t(item.label) }}
@@ -63,7 +63,7 @@ const isMobileMenuOpen = ref(false)
 
 const menuItems = [
     { route: '/', label: 'general.interactive_map', activeClass: 'interactive_map_active' },
-    { route: '/ancamakan', label: 'general.results', activeClass: 'ancam_active' }
+    // { route: '/ancamakan', label: 'general.results', activeClass: 'ancam_active' }
 ]
 
 function openMenu() {
@@ -88,7 +88,7 @@ function isActive(routePath) {
 .active::after {
     content: "";
     @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-gray-800 to-orange-500;
-    animation: slideInRight 1s;
+    /* animation: slideInRight 1s; */
 }
 
 @keyframes slideInRight {
@@ -102,7 +102,7 @@ function isActive(routePath) {
 }
 
 [dir="rtl"] .active::after {
-    animation: slideInLeft 1s;
+    /* animation: slideInLeft 1s; */
 }
 
 @keyframes slideInLeft {

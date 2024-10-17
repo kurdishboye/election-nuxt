@@ -54,6 +54,16 @@
         "invalid_votes": "Invalid Votes",
         "participation_rate": "Participation Rate",
         "loading_data": "Loading data...",
-        "seat_distribution": "Seat Distribution"
+        "seat_distribution": "Seat Distribution",
+        "all": "All",
+        "openbox": "Opened Box",
+        "search": "Search",
+        "total": "Total",
+        "per_page": "per page",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page",
+        "of": "of",
+        "name": "Name"
     }
 }

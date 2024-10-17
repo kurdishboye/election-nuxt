@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default ({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  ssr:false,
+  ssr: process.env.SSR,
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   plugins: [
     '~/plugins/i18n.js'
@@ -10,6 +10,13 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.js',
+  },
+  server: {
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || '0.0.0.0'
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
   },
   i18n: {
     langDir: 'lang',
